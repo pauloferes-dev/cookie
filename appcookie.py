@@ -3,34 +3,35 @@ import streamlit as st
 
 st.title("Quizz teste 🍪")
 
-# Inicialização
-if "etapa" not in st.session_state:
-    st.session_state.etapa = 1
-
 # ETAPA 1 - Nome
 
 if st.session_state.etapa == 1:
 
-    nome = st.text_input("Qual é o seu nome?").strip().lower()
+    nome = st.text_input("Qual é o seu nome?")
 
-    if nome == "":
+    if st.button("Verificar nome"):
+
+        nome = nome.strip().lower()
+
         nomes = [
-            "pamela", "pam", "pamelinha",
-            "pamela matos", "pamela patricia",
-            "paty", "pamela patricia de almeida matos",
+            "pamela",
+            "pam",
+            "pamelinha",
+            "pamela matos",
+            "pamela patricia",
+            "paty",
+            "pamela patricia de almeida matos",
             "pamelao"
         ]
 
         if nome in nomes:
-            st.success("É você mesmo que eu procuro. Vamos continuar!")
 
-            if st.button("Continuar"):
-                st.session_state.etapa = 2
-                st.rerun()
+            st.success("É você mesmo que eu procuro! ❤️")
+            st.session_state.etapa = 2
+            st.rerun()
 
         else:
             st.error("Esse código não é pra você. Até mais. 😊")
-
 
 # ETAPA 2 - Relacionamento
 
