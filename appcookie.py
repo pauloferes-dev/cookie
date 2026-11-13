@@ -77,8 +77,6 @@ if st.session_state.nome_validado:
 # ETAPA 3 - Pergunta do cookie
 if st.session_state.etapa_cookie and not st.session_state.finalizado:
 
-    st.success("Vamos continuar!")
-
     with st.form("form_cookie"):
         cookie = st.radio(
             "Você gostaria de um cookie hoje?",
@@ -90,8 +88,7 @@ if st.session_state.etapa_cookie and not st.session_state.finalizado:
     if confirmar:
 
         if cookie == "Sim! 😍":
-            st.success(
-                "Então está certo! Me aguarde que receberá "
+            st.success("Então está certo! Me aguarde que receberá "
                 "o seu produto pós aula. 🍪"
             )
 
@@ -102,7 +99,6 @@ if st.session_state.etapa_cookie and not st.session_state.finalizado:
             )
 
         st.session_state.finalizado = True
-        st.rerun()
 
 
 # ETAPA FINAL
