@@ -14,7 +14,6 @@ if nome in ["pamela", "pam", "pamelinha", "pamela matos", "pamela patricia", "pa
 
     resposta = st.text_input("Você é o que do Paulo?").strip().lower()
 
-
         if resposta == "namorada":
             st.success("Muito bem, é isso mesmo!")
             st.session_state.etapa_cookie = True
