@@ -93,7 +93,7 @@ if st.session_state.etapa_cookie and not st.session_state.finalizado:
             )
 
         else:
-            st.write(
+            st.success(
                 "Você não tem escolha. Estou testando o código mesmo. "
                 "Continue me aguardando após a aula."
             )
