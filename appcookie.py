@@ -4,22 +4,23 @@ if nome:
 
         resposta = st.text_input("Você é o que do Paulo?").strip().lower()
 
-            if resposta == "namorada":
-                st.write("Muito bem, é isso mesmo!")
-            elif resposta == "ficante":
-                st.write("Não é bem isso, mas vamos continuar.")
-            else:
-                st.write("Está errado, repense suas respostas.")
+          resposta = st.text_input("Você é o que do Paulo?").strip().lower()
 
-        cookie = st.radio(
-            "Você gostaria de um cookie hoje?",
-            ["Sim! 😍", "Não, obrigado."]
-        )
+if resposta == "namorada":
+    st.write("Muito bem, é isso mesmo!")
 
-        if cookie == "Sim! 😍":
-            st.write("Então temos um encontro marcado! 🍪")
-        else:
-            st.write("Tudo bem, fica para a próxima!")
+elif resposta == "ficante":
+    st.write("Não é bem isso, mas vamos continuar.")
 
-    else:
-        st.write("Esse código não é pra você. Até mais. 😊")
+elif resposta != "":
+    st.write("Está errado, repense suas respostas.")
+
+cookie = st.radio(
+    "Você gostaria de um cookie hoje?",
+    ["Sim! 😍", "Não, obrigado."]
+)
+
+if cookie == "Sim! 😍":
+    st.write("Então temos um encontro marcado! 🍪")
+else:
+    st.write("Tudo bem, fica para a próxima!")
