@@ -14,7 +14,6 @@ if nome in ["pamela", "pam", "pamelinha", "pamela matos", "pamela patricia", "pa
 
     resposta = st.text_input("Você é o que do Paulo?").strip().lower()
 
-    if st.button("Confirmar resposta"):
 
         if resposta == "namorada":
             st.success("Muito bem, é isso mesmo!")
@@ -36,7 +35,7 @@ if nome in ["pamela", "pam", "pamelinha", "pamela matos", "pamela patricia", "pa
 
         if st.button("Confirmar escolha"):
             if cookie == "Sim! 😍":
-                st.success("Então temos um encontro marcado! 🍪")
+                st.success("Então está certo! Me aguarde que receberá o seu produto pós aula. 🍪")
             else:
                 st.write("Tudo bem, fica para a próxima!")
 
