@@ -41,33 +41,37 @@ if not st.session_state.nome_validado:
             st.error("Esse código não é pra você. Até mais. 😊")
 
 
+
 # ETAPA 2 - Perguntar o relacionamento
-if st.session_state.nome_validado and not st.session_state.etapa_cookie:
+if st.session_state.nome_validado:
 
     st.success("É você mesmo que eu procuro. Vamos continuar!")
 
-    with st.form("form_relacionamento"):
-        resposta = st.text_input("Você é o que do Paulo?")
-        enviar_resposta = st.form_submit_button("Responder")
+    if not st.session_state.etapa_cookie:
 
-    if enviar_resposta:
-        resposta = resposta.strip().lower()
+        with st.form("form_relacionamento"):
+            resposta = st.text_input("Você é o que do Paulo?")
+            enviar_resposta = st.form_submit_button("Responder")
 
-        if resposta == "namorada":
-            st.success("Muito bem, é isso mesmo!")
-            st.session_state.etapa_cookie = True
-            st.rerun()
+        if enviar_resposta:
+            resposta = resposta.strip().lower()
 
-        elif resposta == "ficante":
-            st.write("Não é bem isso. Talvez por enquanto sim, mas vamos continuar.")
-            st.session_state.etapa_cookie = True
-            st.rerun()
+            if resposta == "namorada":
+                st.success("Muito bem, é isso mesmo!")
+                st.session_state.etapa_cookie = True
+                st.rerun()
 
-        elif resposta != "":
-            st.error("Repense sua resposta, Pamela.")
+            elif resposta == "ficante":
+                st.write("Não é bem isso, mas vamos continuar.")
+                st.session_state.etapa_cookie = True
+                st.rerun()
 
-        else:
-            st.warning("Digite uma resposta para continuar.")
+            else:
+                st.error("Resposta incorreta. Tente novamente.")
+
+    else:
+        st.write("Você é o que do Paulo?")
+        st.success("Muito bem, vamos continuar!")
 
 
 # ETAPA 3 - Pergunta do cookie
