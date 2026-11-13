@@ -13,7 +13,7 @@ if st.session_state.etapa == 1:
 
     nome = st.text_input("Qual é o seu nome?").strip().lower()
 
-    if nome != "":
+    if nome = "":
         nomes = [
             "pamela", "pam", "pamelinha",
             "pamela matos", "pamela patricia",
