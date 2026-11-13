@@ -74,10 +74,11 @@ if st.session_state.nome_validado:
         st.success("Muito bem, vamos continuar!")
 
 
-# ETAPA 3 - Pergunta do cookie
+# ETAPA 3 - PERGUNTA DO COOKIE
 if st.session_state.etapa_cookie and not st.session_state.finalizado:
 
     with st.form("form_cookie"):
+
         cookie = st.radio(
             "Você gostaria de um cookie hoje?",
             ["Sim! 😍", "Não, obrigado."]
@@ -87,23 +88,31 @@ if st.session_state.etapa_cookie and not st.session_state.finalizado:
 
     if confirmar:
 
-        if cookie == "Sim! 😍":
-            st.success("Então está certo! Me aguarde que receberá "
-                "o seu produto pós aula. 🍪"
-            )
-
-        else:
-            st.success(
-                "Você não tem escolha. Estou testando o código mesmo. "
-                "Continue me aguardando após a aula."
-            )
-
+        st.session_state.resposta_cookie = cookie
         st.session_state.finalizado = True
+        st.rerun()
 
 
 # ETAPA FINAL
 if st.session_state.finalizado:
 
+    # BALÕES APARECEM INDEPENDENTEMENTE DA RESPOSTA
     st.balloons()
+
     st.title("Ihuuu! Cookie hoje ❤️")
 
+    if st.session_state.resposta_cookie == "Sim! 😍":
+
+        st.success(
+            "Então está certo! Me aguarde que receberá "
+            "o seu produto pós aula. 🍪"
+        )
+
+    else:
+
+        st.success(
+            "Você não tem escolha. Estou testando o código mesmo. "
+            "Continue me aguardando após a aula. ❤️"
+        )
+
+    st.write("Tenha um ótimo dia! 😊")
