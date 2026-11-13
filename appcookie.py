@@ -59,12 +59,12 @@ if st.session_state.nome_validado and not st.session_state.etapa_cookie:
             st.rerun()
 
         elif resposta == "ficante":
-            st.write("Não é bem isso, mas vamos continuar.")
+            st.write("Não é bem isso. Talvez por enquanto sim, mas vamos continuar.")
             st.session_state.etapa_cookie = True
             st.rerun()
 
         elif resposta != "":
-            st.error("Resposta incorreta. Tente novamente.")
+            st.error("Repense sua resposta, Pamela.")
 
         else:
             st.warning("Digite uma resposta para continuar.")
