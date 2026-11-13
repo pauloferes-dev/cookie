@@ -10,7 +10,7 @@ if nome:
     else:
         st.write("Esse código não é pra você. Até mais. 😊")
 
-resposta = st.text_imput("Você é o que do Paulo?")
+resposta = st.text_imput("Você é o que do Paulo?").strip().lower()
 
 	if resposta:
 		if resposta == "namorada":
