@@ -1,26 +1,34 @@
-if nome:
-    if nome in ["pamela", "pamela patricia", "pamela matos", "pamelinha", "paty", "pam"]:
-        st.write("É você mesmo que eu procuro. Vamos continuar.")
 
-        resposta = st.text_input("Você é o que do Paulo?").strip().lower()
+import streamlit as st
 
-          resposta = st.text_input("Você é o que do Paulo?").strip().lower()
+st.title("Quizz teste.")
 
-if resposta == "namorada":
-    st.write("Muito bem, é isso mesmo!")
+nome = st.text_input("Qual é o seu nome?").strip().lower()
 
-elif resposta == "ficante":
-    st.write("Não é bem isso, mas vamos continuar.")
+if nome in ["pamela", "pam", "pamelinha"]:
 
-elif resposta != "":
-    st.write("Está errado, repense suas respostas.")
+    st.write("É você mesmo que eu procuro. Vamos continuar.")
 
-cookie = st.radio(
-    "Você gostaria de um cookie hoje?",
-    ["Sim! 😍", "Não, obrigado."]
-)
+    resposta = st.text_input("Você é o que do Paulo?").strip().lower()
 
-if cookie == "Sim! 😍":
-    st.write("Então temos um encontro marcado! 🍪")
-else:
-    st.write("Tudo bem, fica para a próxima!")
+    if resposta == "namorada":
+        st.write("Muito bem, é isso mesmo!")
+
+    elif resposta == "ficante":
+        st.write("Não é bem isso, mas vamos continuar.")
+
+    elif resposta != "":
+        st.write("Está errado, repense suas respostas.")
+
+    cookie = st.radio(
+        "Você gostaria de um cookie hoje?",
+        ["Sim! 😍", "Não, obrigado."]
+    )
+
+    if cookie == "Sim! 😍":
+        st.write("Então temos um encontro marcado! 🍪")
+    else:
+        st.write("Tudo bem, fica para a próxima!")
+
+elif nome != "":
+    st.write("Esse código não é pra você. Até mais. 😊")
